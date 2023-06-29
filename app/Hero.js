@@ -11,8 +11,18 @@ const Wrapper = styled(ParallaxBanner)`
   width: 100vw;
   height: 100vh;
   padding: 0;
+
   & div[data-testid='layer-0'] {
     z-index: 19;
+  }
+
+  body:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1; // hide images
+    content: url('${(props) => props.url}');
   }
 `;
 
@@ -45,15 +55,17 @@ const ScrollArrow = styled(FontAwesomeIcon)`
 */
 
 export const Hero = () => {
+  const url = '/_next/image?url=%2Fteam.jpeg&w=1920&q=75';
   return (
     <ParallaxProvider scrollAxis="vertical">
       <Wrapper
         layers={[
           {
-            image: '/_next/image?url=%2Fteam.jpeg&w=1920&q=75', //'https://cdn.apexio.dev/TS-PowerPlay-Robot.png',
+            image: url,
             speed: -30,
           },
         ]}
+        url={url}
         className="bleed"
       >
         <Container>

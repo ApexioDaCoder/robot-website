@@ -9,8 +9,18 @@ const Wrapper = styled(ParallaxBanner)`
   width: 100vw;
   height: 75vh;
   padding: 0;
+
   & div[data-testid='layer-0'] {
     z-index: 19;
+  }
+
+  body:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1; // hide images
+    content: url('${(props) => props.url}');
   }
 `;
 
@@ -30,21 +40,18 @@ const Content = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-/*
-/_next/image?url=%2Frobot-bg.png&w=640&q=75 640w, /_next/image?url=%2Frobot-bg.png&w=750&q=75 750w, /_next/image?url=%2Frobot-bg.png&w=828&q=75 828w, /_next/image?url=%2Frobot-bg.png&w=1080&q=75 1080w, /_next/image?url=%2Frobot-bg.png&w=1200&q=75 1200w, /_next/image?url=%2Frobot-bg.png&w=1920&q=75 1920w, /_next/image?url=%2Frobot-bg.png&w=2048&q=75 2048w, /_next/image?url=%2Frobot-bg.png&w=3840&q=75 3840w
-*/
-
 export const Hero = () => {
+  const url = '/team.jpeg';
   return (
     <ParallaxProvider scrollAxis="vertical">
       <Wrapper
         layers={[
           {
-            image:
-              'https://images.squarespace-cdn.com/content/v1/6441d227b1128a41cb15d8fd/ec41b476-08a7-456f-bc45-46b08d4602f3/96BDFF90-7222-498B-ADAF-290C5DF7FE78.png', //'https://cdn.apexio.dev/TS-PowerPlay-Robot.png',
+            image: url,
             speed: -30,
           },
         ]}
+        url={url}
         className="bleed"
       >
         <Container>

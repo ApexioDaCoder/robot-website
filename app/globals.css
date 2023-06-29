@@ -54,6 +54,10 @@ a:hover {
   animation-delay: calc(var(--layer-delay) * 3);
 }
 
+.fade-up[data-layer='5'] {
+  animation-delay: calc(var(--layer-delay) * 4);
+}
+
 main > :not(.bleed) {
   padding-left: 1rem;
   padding-right: 1rem;

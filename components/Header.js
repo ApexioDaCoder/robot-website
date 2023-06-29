@@ -42,7 +42,12 @@ const LogoWrapper = styled.div`
   cursor: pointer;
 
   img {
-    height: 60px;
+    height: 11vh;
+  }
+  @media screen and (max-width: 992px) {
+    img {
+      height: 60px;
+    }
   }
 `;
 
