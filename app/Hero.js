@@ -50,7 +50,7 @@ export const Hero = () => {
       <Wrapper
         layers={[
           {
-            image: '/_next/image?url=%2Fteam.jpeg&w=1920&q=75', //'https://cdn.apexio.dev/TS-PowerPlay-Robot.png',
+            image: '/team.png', //'/_next/image?url=%2Fteam.jpeg&w=1920&q=75', //'https://cdn.apexio.dev/TS-PowerPlay-Robot.png',
             speed: -30,
           },
         ]}
