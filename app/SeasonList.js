@@ -10,7 +10,6 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-  cn,
 } from '@nextui-org/react';
 import Link from 'next/link';
 import { NotebookIcon } from '@/icons/NotebookIcon';

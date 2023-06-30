@@ -54,6 +54,7 @@ const CursorWrapper = styled.div`
 
 export const Cursor = () => {
   const pathname = usePathname();
+  const hoverTargets = '.hover-target, #hover-target, a, button';
 
   useEffect(() => {
     document
@@ -69,26 +70,18 @@ export const Cursor = () => {
     var t = document.getElementById('cursor'),
       e = document.getElementById('cursor2'),
       i = document.getElementById('cursor3');
-    function n(t) {
-      e.classList.add('hover'), i.classList.add('hover');
-    }
-    function s(t) {
-      e.classList.remove('hover'), i.classList.remove('hover');
-    }
-    s();
+    e.classList.remove('hover'), i.classList.remove('hover');
     for (
-      var r = [
-          ...document.querySelectorAll('.hover-target'),
-          ...document.querySelectorAll('#hover-target'),
-        ],
-        a = r.length - 1;
+      var r = document.querySelectorAll(hoverTargets), a = r.length - 1;
       a >= 0;
       a--
     ) {
-      o(r[a]);
-    }
-    function o(t) {
-      t.addEventListener('mouseover', n), t.addEventListener('mouseout', s);
+      r[a].addEventListener('mouseover', () => {
+        e.classList.add('hover'), i.classList.add('hover');
+      });
+      r[a].addEventListener('mouseout', () => {
+        e.classList.remove('hover'), i.classList.remove('hover');
+      });
     }
   }, []);
 
@@ -96,27 +89,18 @@ export const Cursor = () => {
     var t = document.getElementById('cursor'),
       e = document.getElementById('cursor2'),
       i = document.getElementById('cursor3');
-    function n(t) {
-      e.classList.add('hover'), i.classList.add('hover');
-    }
-    function s(t) {
-      e.classList.remove('hover'), i.classList.remove('hover');
-    }
-    s();
+    e.classList.remove('hover'), i.classList.remove('hover');
     for (
-      var r = [
-          ...document.querySelectorAll(
-            '.hover-target, #hover-target, a, button'
-          ),
-        ],
-        a = r.length - 1;
+      var r = document.querySelectorAll(hoverTargets), a = r.length - 1;
       a >= 0;
       a--
     ) {
-      o(r[a]);
-    }
-    function o(t) {
-      t.addEventListener('mouseover', n), t.addEventListener('mouseout', s);
+      r[a].addEventListener('mouseover', () => {
+        e.classList.add('hover'), i.classList.add('hover');
+      });
+      r[a].addEventListener('mouseout', () => {
+        e.classList.remove('hover'), i.classList.remove('hover');
+      });
     }
   }, [pathname]);
 
