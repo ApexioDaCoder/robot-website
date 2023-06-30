@@ -10,10 +10,4 @@ export const Title = styled(CascadeText)`
   padding: 0;
   white-space: nowrap;
   --d: 1.1s;
-  /*
-  color: #000;
-  --g0: #fff;
-  text-shadow: 1px 1px var(--g0), -1px -1px var(--g0), 1px -1px var(--g0),
-    -1px 1px var(--g0);
-    */
 `;

@@ -2,12 +2,10 @@
 
 import styled from 'styled-components';
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
-import { Balancer } from 'react-wrap-balancer';
-import { Title } from './Title';
 
 const Wrapper = styled(ParallaxBanner)`
   width: 100vw;
-  height: 75vh;
+  height: ${(props) => props.height}vh;
   padding: 0;
 
   & div[data-testid='layer-0'] {
@@ -19,7 +17,7 @@ const Wrapper = styled(ParallaxBanner)`
     width: 0;
     height: 0;
     overflow: hidden;
-    z-index: -1; // hide images
+    z-index: -1;
     content: url('${(props) => props.url}');
   }
 `;
@@ -32,7 +30,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-const Content = styled.div`
+export const HeroContent = styled.div`
   z-index: 21;
   position: absolute;
   top: 50%;
@@ -40,8 +38,7 @@ const Content = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export const Hero = () => {
-  const url = '/robot.png';
+export const Hero = ({ url, children, height = 75, ...etc }) => {
   return (
     <ParallaxProvider scrollAxis="vertical">
       <Wrapper
@@ -52,13 +49,11 @@ export const Hero = () => {
           },
         ]}
         url={url}
+        height={height}
         className="bleed"
+        {...etc}
       >
-        <Container>
-          <Content>
-            <Title delay={0.3}>Projects</Title>
-          </Content>
-        </Container>
+        <Container>{children}</Container>
       </Wrapper>
     </ParallaxProvider>
   );

@@ -19,13 +19,13 @@ const CursorWrapper = styled.div`
     background-color: #fff;
     height: 0;
     width: 0;
-    z-index: 99999;
+    z-index: 1000000;
   }
   #cursor2,
   #cursor3 {
     height: 36px;
     width: 36px;
-    z-index: 99998;
+    z-index: 999999;
     transition: all 0.3s ease-out;
   }
   #cursor2.hover,
@@ -87,7 +87,7 @@ export const Cursor = () => {
     function o(t) {
       t.addEventListener('mouseover', n), t.addEventListener('mouseout', s);
     }
-  });
+  }, []);
 
   return (
     <CursorWrapper>

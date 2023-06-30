@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import { Balancer } from 'react-wrap-balancer';
+import { useFadeUp } from '@/lib/useFade';
 
 const Wrapper = styled.blockquote`
   padding: 3rem 1rem;
@@ -63,7 +64,7 @@ const Wrapper = styled.blockquote`
 export const Quote = () => {
   return (
     <Wrapper>
-      <div>
+      <div {...useFadeUp()}>
         <Balancer as="p">
           If you set your goals ridiculously high and it&apos;s a failure, you
           will fail above everyone else&apos;s success.

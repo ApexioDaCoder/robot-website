@@ -5,10 +5,10 @@ import {
   Merriweather,
   Bebas_Neue,
 } from 'next/font/google';
-import StyledComponentsRegistry from '@/lib/registry';
 import { Cursor } from '@/components/Cursor';
 import { Header } from '@/components/Header';
 import localFont from 'next/font/local';
+import { Providers } from './providers';
 
 const paladins = localFont({
   src: './Paladins.woff2',
@@ -46,15 +46,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${montserrat.variable} ${paladins.variable} ${readexPro.className} ${merriweather.variable} ${bebasNeue.variable} text-white`}
       >
-        <StyledComponentsRegistry>
+        <Providers>
           <Header />
           <Cursor />
           {children}
-        </StyledComponentsRegistry>
+        </Providers>
       </body>
     </html>
   );
