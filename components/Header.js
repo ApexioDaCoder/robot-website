@@ -147,10 +147,12 @@ const NavWrapper = styled.div`
       border-radius linear 0.8s;
     transform: translateX(100%) translateY(-100%);
   }
+
   &:after {
     background: rgba(9, 9, 12, 1);
     transition-delay: 0s;
   }
+
   &:before {
     transition-delay: 0.2s;
   }
@@ -310,7 +312,17 @@ export const Header = () => {
         <HeaderWrapper className="fade-up">
           <LogoWrapper>
             <Link href="/" className="hover-target">
-              <img src="https://cdn.apexio.dev/TS21233-logo.png" alt="" />
+              <picture>
+                <source
+                  srcset="https://cdn.apexio.dev/TS21233-logo.avif"
+                  type="image/avif"
+                />
+                <source
+                  srcset="https://cdn.apexio.dev/TS21233-logo.webp"
+                  type="image/webp"
+                />
+                <img src="https://cdn.apexio.dev/TS21233-logo.png" alt="" />
+              </picture>
             </Link>
           </LogoWrapper>
           <NavButton
