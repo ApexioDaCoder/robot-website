@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 import { Balancer } from 'react-wrap-balancer';
-import { useFadeUp } from '@/lib/useFade';
+import { useFadeUp } from '@/lib/useFadeUp';
 
 const Wrapper = styled.blockquote`
   padding: 3rem 1rem;

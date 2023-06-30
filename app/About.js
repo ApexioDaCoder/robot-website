@@ -2,8 +2,9 @@
 
 import styled from 'styled-components';
 import { SubTitle } from '@/components/SubTitle';
-import { Image } from '@nextui-org/react';
-import { useFadeUp } from '@/lib/useFade';
+import { Image, Button } from '@nextui-org/react';
+import { useFadeUp } from '@/lib/useFadeUp';
+import { useRouter } from 'next/navigation';
 
 const Wrapper = styled.div`
   --gap: 2em;
@@ -23,6 +24,8 @@ const Wrapper = styled.div`
 `;
 
 export const About = () => {
+  const router = useRouter();
+
   return (
     <Wrapper>
       <div>
@@ -34,12 +37,19 @@ export const About = () => {
           creating a stable and functional robotics team that promotes learning,
           diversity, determination, and success
         </p>
-        <p {...useFadeUp()}>
+        <p {...useFadeUp()} className="mb-4">
           We are a community team located in San Antonio, Texas whose goal is to
           create an advanced program to teach students CAD, coding, mechanics,
           and team management. Our team is comprised of students from 5 separate
           schools to cultivate diversity in ideas.
         </p>
+        <Button
+          variant="bordered"
+          onPress={() => router.push('/our-team')}
+          {...useFadeUp()}
+        >
+          Learn More
+        </Button>
       </div>
       <Image
         src="/team.jpeg"
