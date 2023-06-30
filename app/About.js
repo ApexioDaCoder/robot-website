@@ -52,7 +52,7 @@ export const About = () => {
         </Button>
       </div>
       <Image
-        src="/team.jpeg"
+        src="/_next/image?url=%2Fteam.jpeg&w=640&q=75"
         alt="Team Photo after THINK award"
         isBlurred
         {...useFadeUp({ threshold: 0.25 })}
