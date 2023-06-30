@@ -313,14 +313,6 @@ export const Header = () => {
           <LogoWrapper>
             <Link href="/" className="hover-target">
               <picture>
-                <source
-                  srcset="https://cdn.apexio.dev/TS21233-logo.avif"
-                  type="image/avif"
-                />
-                <source
-                  srcset="https://cdn.apexio.dev/TS21233-logo.webp"
-                  type="image/webp"
-                />
                 <img src="https://cdn.apexio.dev/TS21233-logo.png" alt="" />
               </picture>
             </Link>
