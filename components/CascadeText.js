@@ -26,25 +26,25 @@ const CascadeWrapper = styled.div`
 `;
 
 export const CascadeText = ({ children, delay = 0, ...etc }) => {
-  if (typeof children == 'string') {
-    const [onScreen, setOnScreen] = useState(false);
-    const ref = useRef();
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              setOnScreen(true);
-              observer.unobserve(ref.current);
-            }
+  const [onScreen, setOnScreen] = useState(false);
+  const ref = useRef();
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setOnScreen(true);
+            observer.unobserve(ref.current);
           }
-        },
-        { threshold: 1 }
-      );
-      observer.observe(ref.current);
-      return () => observer.unobserve(ref.current);
-    }, []);
+        }
+      },
+      { threshold: 1 }
+    );
+    observer.observe(ref.current);
+    return () => observer.unobserve(ref.current);
+  }, []);
 
+  if (typeof children == 'string') {
     return (
       <CascadeWrapper
         onScreen={onScreen}
