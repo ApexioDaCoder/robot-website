@@ -16,9 +16,10 @@ const CascadeWrapper = styled.div`
   --anim-delay: 0;
   position: relative;
   overflow: visible;
+  font-family: var(--bebas-neue-font);
 
   & .char {
-    display: inline;
+    display: inline-block;
     animation: ${slideIn} var(--d) cubic-bezier(0.4, 0.3, 0.1, 1) both;
     animation-delay: calc(var(--anim-delay) + calc(var(--char-index) * 15ms));
     clip-path: polygon(-40% -15%, 140% -15%, 140% 120%, -40% 120%);

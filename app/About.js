@@ -7,19 +7,16 @@ import { useFadeUp } from '@/lib/useFadeUp';
 import { useRouter } from 'next/navigation';
 
 const Wrapper = styled.div`
-  --gap: 2em;
   padding: 3rem 1rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
   text-align: left;
   display: grid;
   grid-template-columns: 100%;
-  gap: var(--gap);
+  gap: 2em;
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: calc(50% - calc(var(--gap) / 2)) calc(
-        50% - calc(var(--gap) / 2)
-      );
+    grid-template-columns: 1fr 1fr;
   }
 `;
 

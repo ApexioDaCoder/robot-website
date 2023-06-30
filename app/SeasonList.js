@@ -16,6 +16,7 @@ import Link from 'next/link';
 import { NotebookIcon } from '@/icons/NotebookIcon';
 import { PortfolioIcon } from '@/icons/PortfolioIcon';
 import { AnchorIcon } from '@/icons/AnchorIcon';
+import { useFadeUp } from '@/lib/useFadeUp';
 
 const Wrapper = styled.div`
   padding: 3rem 1rem;

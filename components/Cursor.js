@@ -1,4 +1,5 @@
 'use client';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -52,6 +53,8 @@ const CursorWrapper = styled.div`
 `;
 
 export const Cursor = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     document
       .getElementsByTagName('html')[0]
@@ -88,6 +91,34 @@ export const Cursor = () => {
       t.addEventListener('mouseover', n), t.addEventListener('mouseout', s);
     }
   }, []);
+
+  useEffect(() => {
+    var t = document.getElementById('cursor'),
+      e = document.getElementById('cursor2'),
+      i = document.getElementById('cursor3');
+    function n(t) {
+      e.classList.add('hover'), i.classList.add('hover');
+    }
+    function s(t) {
+      e.classList.remove('hover'), i.classList.remove('hover');
+    }
+    s();
+    for (
+      var r = [
+          ...document.querySelectorAll(
+            '.hover-target, #hover-target, a, button'
+          ),
+        ],
+        a = r.length - 1;
+      a >= 0;
+      a--
+    ) {
+      o(r[a]);
+    }
+    function o(t) {
+      t.addEventListener('mouseover', n), t.addEventListener('mouseout', s);
+    }
+  }, [pathname]);
 
   return (
     <CursorWrapper>
