@@ -24,6 +24,18 @@ const CascadeWrapper = styled.div`
     clip-path: polygon(-40% -15%, 140% -15%, 140% 120%, -40% 120%);
     animation-play-state: ${(props) => (props.onScreen ? 'running' : 'paused')};
     overflow: visible;
+    position: relative;
+  }
+
+  & .char:before,
+  & .char:after {
+    content: attr(data-char);
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: inherit;
+    user-select: none;
   }
 `;
 
@@ -61,6 +73,7 @@ export const CascadeText = ({ children, delay = 0, ...etc }) => {
               key={i}
               className={/\s/.test(char) ? 'whitespace' : 'char'}
               style={{ ['--char-index']: i }}
+              data-char={char}
             >
               {char}
             </span>
