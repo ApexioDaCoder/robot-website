@@ -15,6 +15,7 @@ const CascadeWrapper = styled.div`
     props.duration ? props.duration : props.long ? 1.1 : 0.6}s;
   --anim-delay: 0;
   position: relative;
+  overflow: visible;
 
   & .char {
     display: inline-block;
@@ -22,6 +23,7 @@ const CascadeWrapper = styled.div`
     animation-delay: calc(var(--anim-delay) + calc(var(--char-index) * 15ms));
     clip-path: polygon(-40% -15%, 140% -15%, 140% 120%, -40% 120%);
     animation-play-state: ${(props) => (props.onScreen ? 'running' : 'paused')};
+    overflow: visible;
   }
 `;
 
