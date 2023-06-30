@@ -29,19 +29,20 @@ export const CascadeText = ({ children, delay = 0, ...etc }) => {
   const [onScreen, setOnScreen] = useState(false);
   const ref = useRef();
   useEffect(() => {
+    const component = ref.current;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setOnScreen(true);
-            observer.unobserve(ref.current);
+            observer.unobserve(component);
           }
         }
       },
       { threshold: 1 }
     );
-    observer.observe(ref.current);
-    return () => observer.unobserve(ref.current);
+    observer.observe(component);
+    return () => observer.unobserve(component);
   }, []);
 
   if (typeof children == 'string') {
