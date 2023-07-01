@@ -49,7 +49,9 @@ export const Hero = ({ url, children, height = 75, ...etc }) => {
         layers={[
           {
             speed: -30,
-            children: <Image src={url} fill={true} priority={true} />,
+            children: (
+              <Image src={url} fill={true} priority={true} alt="Team Photo" />
+            ),
           },
         ]}
         url={url}

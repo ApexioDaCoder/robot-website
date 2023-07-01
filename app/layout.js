@@ -13,7 +13,7 @@ import { Footer } from '@/components/Footer';
 
 const paladins = localFont({
   src: './Paladins.woff2',
-  display: 'auto',
+  display: 'swap',
   variable: '--paladins-font',
 });
 

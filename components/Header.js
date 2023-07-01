@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navLinks = {
   home: '/',
@@ -313,7 +314,7 @@ export const Header = () => {
           <LogoWrapper>
             <Link href="/" className="hover-target">
               <picture>
-                <img src="https://cdn.apexio.dev/TS21233-logo.png" alt="" />
+                <Image src="https://cdn.apexio.dev/TS21233-logo.png" alt="" />
               </picture>
             </Link>
           </LogoWrapper>
