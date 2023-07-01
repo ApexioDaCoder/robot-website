@@ -10,20 +10,13 @@ const Wrapper = styled(ParallaxBanner)`
 
   & div[data-testid='layer-0'] > img {
     z-index: 19;
-    height: ${(props) => props.height}vh;
-    width: fit-content;
-    max-width: fit-content;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  @media only screen and (min-width: 768px) {
-    & div[data-testid='layer-0'] > img {
-      width: 100%;
-      height: auto;
-    }
   }
 `;
 
