@@ -18,6 +18,15 @@ const Wrapper = styled(ParallaxBanner)`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  body:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    content: url('${(props) => props.url}');
+  }
 `;
 
 const Container = styled.div`
