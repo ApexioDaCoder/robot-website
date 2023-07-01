@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Hero, HeroContent } from '../../components/Hero';
+import { Hero, HeroContent } from '@/components/Hero';
 import { Title } from '@/components/Title';
 
 export default function Projects() {

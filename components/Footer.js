@@ -46,6 +46,12 @@ const Wrapper = styled.footer`
   }
 
   @media only screen and (min-width: 768px) {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+
     & .copyright {
       grid-column-start: 1;
       grid-column-end: span 2;
