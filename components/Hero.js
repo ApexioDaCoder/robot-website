@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
+import Image from 'next/image';
 
 const Wrapper = styled(ParallaxBanner)`
   width: 100vw;
@@ -13,10 +14,6 @@ const Wrapper = styled(ParallaxBanner)`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   body:after {
@@ -52,7 +49,7 @@ export const Hero = ({ url, children, height = 75, ...etc }) => {
         layers={[
           {
             speed: -30,
-            children: <img src={url} />,
+            children: <Image src={url} fill={true} />,
           },
         ]}
         url={url}

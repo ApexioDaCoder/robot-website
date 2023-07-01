@@ -22,7 +22,7 @@ const ScrollArrow = styled(FontAwesomeIcon)`
 export default function Home() {
   return (
     <main className="text-center">
-      <Hero url="/_next/image?url=%2Fteam.jpeg&w=1920&q=75" height={100}>
+      <Hero url="/team.jpeg" height={100}>
         <HeroContent>
           <TeamNumber delay={0.3}>21233</TeamNumber>
           <p className="text-lg font-bold fade-up" data-layer="3">
