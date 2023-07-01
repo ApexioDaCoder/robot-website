@@ -44,10 +44,12 @@ const LogoWrapper = styled.div`
 
   img {
     height: 11vh;
+    width: calc(11vh * 3.49426666667);
   }
   @media screen and (max-width: 992px) {
     img {
       height: 60px;
+      width: 209.656px;
     }
   }
 `;
@@ -314,7 +316,13 @@ export const Header = () => {
           <LogoWrapper>
             <Link href="/" className="hover-target">
               <picture>
-                <Image src="https://cdn.apexio.dev/TS21233-logo.png" alt="" />
+                <Image
+                  src="/TS21233-logo.png"
+                  alt=""
+                  width={209.656}
+                  height={60}
+                  priority={true}
+                />
               </picture>
             </Link>
           </LogoWrapper>
