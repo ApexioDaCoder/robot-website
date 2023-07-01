@@ -8,20 +8,9 @@ const Wrapper = styled(ParallaxBanner)`
   height: ${(props) => props.height}vh;
   padding: 0;
 
-  & div[data-testid='layer-0'] {
+  & div[data-testid='layer-0'] > img {
     z-index: 19;
   }
-
-  /*
-  body:after {
-    position: absolute;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    z-index: -1;
-    content: url('${(props) => props.url}');
-  }
-  */
 `;
 
 const Container = styled.div`
@@ -72,15 +61,11 @@ const PreloadImage = styled.img`
 export const Hero = ({ url, children, height = 75, ...etc }) => {
   return (
     <ParallaxProvider scrollAxis="vertical">
-      <PreloadContainer className="bleed" height={height}>
-        <PreloadImage src={url} height={height} />
-        <div />
-      </PreloadContainer>
       <Wrapper
         layers={[
           {
-            image: url,
             speed: -30,
+            children: <img src={url} />,
           },
         ]}
         url={url}
