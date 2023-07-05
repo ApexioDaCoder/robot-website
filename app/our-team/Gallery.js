@@ -26,7 +26,7 @@ export const Gallery = () => {
         <Image
           key={key}
           src={photo}
-          className="m-[2px] cursor-pointer"
+          className="m-[2px] cursor-pointer hover-target"
           onClick={(e) => onClick(e, { index })}
         />
       );
