@@ -56,7 +56,13 @@ export const Hero = ({
           {
             speed: -30,
             children: (
-              <Image src={url} fill={true} priority={true} alt="Team Photo" />
+              <Image
+                src={url}
+                fill={true}
+                priority={true}
+                q={100}
+                alt="Team Photo"
+              />
             ),
           },
         ]}

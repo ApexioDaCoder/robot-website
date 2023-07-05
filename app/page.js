@@ -10,6 +10,7 @@ import { Balancer } from 'react-wrap-balancer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { TeamNumber } from './TeamNumber';
+import { SubTitle } from '@/components/SubTitle';
 
 const ScrollArrow = styled(FontAwesomeIcon)`
   position: absolute;
@@ -39,6 +40,39 @@ export default function Home() {
       <Quote />
       <SeasonList />
       <About />
+      <Hero url="/sponsors-bg.jpeg" height={50}>
+        <HeroContent>
+          <div>
+            <SubTitle>Sponsors</SubTitle>
+          </div>
+          <div className="grid gap-4 grid-rows-3 sm:grid-rows-none sm:grid-cols-3">
+            <div>
+              <Image
+                src="/SA_Current.png"
+                fill
+                className="!h-[auto] !w-[100%] !relative inline"
+                alt="SA Current"
+              />
+            </div>
+            <div>
+              <Image
+                src="/solidworks.png"
+                fill
+                className="!h-[auto] !w-[100%] !relative inline"
+                alt="Solidworks"
+              />
+            </div>
+            <div>
+              <Image
+                src="/fabworks-logo.svg"
+                fill
+                className="!h-[auto] !w-[100%] !relative inline"
+                alt="Fabworks"
+              />
+            </div>
+          </div>
+        </HeroContent>
+      </Hero>
     </main>
   );
 }

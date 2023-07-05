@@ -10,6 +10,7 @@ const Wrapper = styled.footer`
   width: 100vw;
   padding: 0;
   margin: 0;
+  margin-top: 3rem;
   position: relative;
   background: linear-gradient(
     180deg,

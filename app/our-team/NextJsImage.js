@@ -42,6 +42,7 @@ export default function NextJsImage({ slide, rect }) {
         placeholder={slide.blurDataURL ? 'blur' : undefined}
         style={{ objectFit: cover ? 'cover' : 'contain' }}
         sizes={`${Math.ceil((width / window.innerWidth) * 100)}vw`}
+        className="rounded"
       />
     </div>
   );
