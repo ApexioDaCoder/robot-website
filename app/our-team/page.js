@@ -8,6 +8,31 @@ import { Section } from '@/components/Section';
 import { Card, CardBody, CardFooter } from '@nextui-org/react';
 import { SubTitle } from '@/components/SubTitle';
 
+const MemberCard = ({ member }) => {
+  return (
+    <Card className="max-w-[200px]" {...useFadeUp()}>
+      <CardBody className="p-0 max-h-[200px] max-w-[200px]">
+        <Image
+          width={200}
+          height={200}
+          className="rounded-xl h-[200px] object-cover"
+          src={`/profile/${member.name.toLowerCase()}.jpeg`}
+          alt="Member picture"
+        />
+      </CardBody>
+      <CardFooter className="text-sm flex-col">
+        <b>
+          {member.name}
+          {member.nickname && ` (${member.nickname})`}
+        </b>
+        <p className="text-default-500 text-center">
+          {member.position.toUpperCase()}
+        </p>
+      </CardFooter>
+    </Card>
+  );
+};
+
 export default function OurTeam() {
   return (
     <main className="text-center min-h-[100vh]">
@@ -57,26 +82,8 @@ export default function OurTeam() {
             nickname: 'JP',
           },
           { name: 'Sean', position: 'mechanical' },
-        ].map((person, i) => (
-          <Card key={i} className="max-w-[200px]" {...useFadeUp()}>
-            <CardBody className="p-0 max-h-[200px] max-w-[200px]">
-              <Image
-                width={200}
-                height={200}
-                className="rounded-xl h-[200px] object-cover"
-                src={`/profile/${person.name.toLowerCase()}.jpeg`}
-              />
-            </CardBody>
-            <CardFooter className="text-sm flex-col">
-              <b>
-                {person.name}
-                {person.nickname && ` (${person.nickname})`}
-              </b>
-              <p className="text-default-500 text-center">
-                {person.position.toUpperCase()}
-              </p>
-            </CardFooter>
-          </Card>
+        ].map((member, i) => (
+          <MemberCard key={i} member={member} />
         ))}
       </Section>
     </main>
