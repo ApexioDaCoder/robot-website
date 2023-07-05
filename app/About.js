@@ -5,6 +5,7 @@ import { SubTitle } from '@/components/SubTitle';
 import { Image, Button } from '@nextui-org/react';
 import { useFadeUp } from '@/lib/useFadeUp';
 import { useRouter } from 'next/navigation';
+import NextImage from "next/image";
 
 const Wrapper = styled.div`
   padding: 3rem 1rem;
@@ -28,11 +29,11 @@ export const About = () => {
       <div>
         <SubTitle>Our Team</SubTitle>
         <p className="mb-4 italic" {...useFadeUp()}>
-          <b className="font-black">Mission statement:</b> our goal is to
+          <b className="font-black">Mission statement:</b> Our goal is to
           introduce the STEM program to families outside of school so they may
-          become the leaders of the next generation of Robotics. we do this by
+          become the leaders of the next generation of robotics. We do this by
           creating a stable and functional robotics team that promotes learning,
-          diversity, determination, and success
+          diversity, determination, and success.
         </p>
         <p {...useFadeUp()} className="mb-4">
           We are a community team located in San Antonio, Texas whose goal is to

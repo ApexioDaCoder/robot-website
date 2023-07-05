@@ -29,7 +29,7 @@ const Wrapper = styled(ParallaxBanner)`
 const Container = styled.div`
   width: 100vw;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, ${(props) => props.darkness});
   z-index: 20;
   position: relative;
 `;
@@ -42,7 +42,13 @@ export const HeroContent = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export const Hero = ({ url, children, height = 75, ...etc }) => {
+export const Hero = ({
+  url,
+  children,
+  height = 75,
+  darkness = 0.3,
+  ...etc
+}) => {
   return (
     <ParallaxProvider scrollAxis="vertical">
       <Wrapper
@@ -59,7 +65,7 @@ export const Hero = ({ url, children, height = 75, ...etc }) => {
         className="bleed"
         {...etc}
       >
-        <Container>{children}</Container>
+        <Container darkness={darkness}>{children}</Container>
       </Wrapper>
     </ParallaxProvider>
   );
