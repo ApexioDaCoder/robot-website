@@ -27,12 +27,14 @@ const HeaderComponent = styled.header`
     rgba(0, 0, 0, 0.7) 100%
   );
   font-family: var(--montserrat-font);
+  pointer-events: none;
 `;
 
 const HeaderWrapper = styled.div`
   position: relative;
   width: calc(100% - 100px);
   margin-left: 50px;
+  pointer-events: auto;
 `;
 
 const LogoWrapper = styled.div`
