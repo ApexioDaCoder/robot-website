@@ -7,6 +7,7 @@ import { useFadeUp } from '@/lib/useFadeUp';
 import { Section } from '@/components/Section';
 import { Card, CardBody, CardFooter } from '@nextui-org/react';
 import { SubTitle } from '@/components/SubTitle';
+import { Gallery } from './Gallery';
 
 const MemberCard = ({ member }) => {
   return (
@@ -85,6 +86,10 @@ export default function OurTeam() {
         ].map((member, i) => (
           <MemberCard key={i} member={member} />
         ))}
+      </Section>
+      <SubTitle>Gallery</SubTitle>
+      <Section>
+        <Gallery />
       </Section>
     </main>
   );
