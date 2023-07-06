@@ -75,7 +75,6 @@ export default function RootLayout({ children }) {
       >
         <Providers>
           <Header />
-          <Cursor />
           {children}
           <FTCInfo />
           <Footer />
