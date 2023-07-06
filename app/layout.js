@@ -10,6 +10,7 @@ import { Header } from '@/components/Header';
 import localFont from 'next/font/local';
 import { Providers } from './providers';
 import { Footer } from '@/components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 const paladins = localFont({
   src: './Paladins.woff2',
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
           <Cursor />
           {children}
           <Footer />
+          <Analytics />
         </Providers>
       </body>
     </html>
