@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { TeamNumber } from './TeamNumber';
 import { SubTitle } from '@/components/SubTitle';
+import { FTCInfo } from '@/components/FTC-Info';
 
 const ScrollArrow = styled(FontAwesomeIcon)`
   position: absolute;

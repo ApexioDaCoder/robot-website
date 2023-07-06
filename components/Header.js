@@ -317,15 +317,13 @@ export const Header = () => {
         <HeaderWrapper className="fade-up">
           <LogoWrapper>
             <Link href="/" className="hover-target">
-              <picture>
-                <Image
-                  src="/TS21233-logo.png"
-                  alt=""
-                  width={209.656}
-                  height={60}
-                  priority={true}
-                />
-              </picture>
+              <Image
+                src="/TS21233-logo.png"
+                alt=""
+                width={209.656}
+                height={60}
+                priority={true}
+              />
             </Link>
           </LogoWrapper>
           <NavButton

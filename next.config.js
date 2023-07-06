@@ -15,6 +15,12 @@ const nextConfig = {
         port: '',
         pathname: '/*/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.firstinspires.org',
+        port: '',
+        pathname: '/*/**',
+      },
     ],
   },
 };
