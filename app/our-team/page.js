@@ -11,7 +11,7 @@ import { Gallery } from './Gallery';
 
 const MemberCard = ({ member }) => {
   return (
-    <Card className="max-w-[200px]" {...useFadeUp()}>
+    <Card className="max-w-[200px]" {...useFadeUp({ threshold: 0.5 })}>
       <CardBody className="p-0 max-h-[200px] max-w-[200px]">
         <Image
           width={200}
