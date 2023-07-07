@@ -39,6 +39,8 @@ const StyledAccordion = styled(Accordion)`
   border: 2px solid #181818;
   box-shadow: inset 0 1px 2px #525154, 0 13px 10px rgba(0, 0, 0, 0.35);
   border-radius: 12px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 `;
 
 export const SeasonList = () => {
