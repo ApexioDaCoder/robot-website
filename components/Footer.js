@@ -70,6 +70,15 @@ const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 4em;
   }
+
+  & a {
+    color: #a9a9a9;
+    transition: all 0.25s ease;
+  }
+
+  & a:hover {
+    color: #fff;
+  }
 `;
 
 export const Footer = () => {
