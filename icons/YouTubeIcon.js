@@ -1,7 +1,7 @@
 export const YouTubeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height="1em"
+    height="1.5em"
     viewBox="0 0 576 512"
     role="presentation"
   >
