@@ -8,15 +8,28 @@ import { Section } from '@/components/Section';
 import { Card, CardBody, CardFooter } from '@nextui-org/react';
 import { SubTitle } from '@/components/SubTitle';
 import { Gallery } from './Gallery';
+import styled from 'styled-components';
+
+const StyledCard = styled(Card)`
+  background-color: #000;
+  background-image: linear-gradient(#242325, #171619);
+  border: 2px solid #181818;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  position: relative;
+  transform: none;
+  box-shadow: inset 0 1px 2px #525154, 0 13px 10px rgba(0, 0, 0, 0.35);
+`;
 
 const MemberCard = ({ member }) => {
   return (
-    <Card className="max-w-[200px]" {...useFadeUp({ threshold: 0.5 })}>
+    <StyledCard className="max-w-[200px]" {...useFadeUp({ threshold: 0.5 })}>
       <CardBody className="p-0 max-h-[200px] max-w-[200px]">
         <Image
           width={200}
           height={200}
-          className="rounded-xl h-[200px] object-cover"
+          className="rounded h-[200px] object-cover"
           src={`/profile/${member.name.toLowerCase()}.jpeg`}
           alt="Member picture"
         />
@@ -30,7 +43,7 @@ const MemberCard = ({ member }) => {
           {member.position.toUpperCase()}
         </p>
       </CardFooter>
-    </Card>
+    </StyledCard>
   );
 };
 

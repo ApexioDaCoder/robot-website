@@ -12,6 +12,7 @@
     "@emotion/is-prop-valid": "^1.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mux/mux-player-react": "^1.11.3",
     "@nextui-org/react": "0.0.0-dev-v2-20230625233448",
     "@vercel/analytics": "^1.0.1",
     "autoprefixer": "10.4.14",

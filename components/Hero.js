@@ -45,7 +45,7 @@ export const HeroContent = styled.div`
 export const Hero = ({
   url,
   children,
-  height = 75,
+  height = 70,
   darkness = 0.3,
   ...etc
 }) => {

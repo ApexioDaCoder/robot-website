@@ -33,6 +33,14 @@ const Season = styled.div`
   }
 `;
 
+const StyledAccordion = styled(Accordion)`
+  background-color: #000;
+  background-image: linear-gradient(#242325, #171619);
+  border: 2px solid #181818;
+  box-shadow: inset 0 1px 2px #525154, 0 13px 10px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+`;
+
 export const SeasonList = () => {
   const iconClasses =
     'text-xl text-default-500 pointer-events-none flex-shrink-0';
@@ -40,7 +48,7 @@ export const SeasonList = () => {
   return (
     <Wrapper>
       <SubTitle>FTC Seasons</SubTitle>
-      <Accordion variant="shadow">
+      <StyledAccordion variant="shadow">
         <AccordionItem
           key="1"
           aria-label="FTC Power Play 2022-2023"
@@ -100,7 +108,7 @@ export const SeasonList = () => {
             </Dropdown>
           </Season>
         </AccordionItem>
-      </Accordion>
+      </StyledAccordion>
     </Wrapper>
   );
 };
