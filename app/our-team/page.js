@@ -56,7 +56,7 @@ export default function OurTeam() {
         </HeroContent>
       </Hero>
       <Section>
-        <p className="mb-4 italic" {...useFadeUp()}>
+        <p className="mb-4 italic" {...useFadeUp({ threshold: 0.1 })}>
           <b className="font-black">Mission statement:</b> Our goal is to
           introduce the STEM program to families outside of school so they may
           become the leaders of the next generation of robotics.
