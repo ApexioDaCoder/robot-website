@@ -37,7 +37,7 @@ export const Form = () => {
           Contact
         </Button>
       </form>
-      {finished && 'Finished'}
+      <p>{finished ? 'Thank You!' : '​'}</p>
     </>
   );
 };
