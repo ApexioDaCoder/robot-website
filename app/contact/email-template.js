@@ -35,8 +35,8 @@ export const SubmissionEmail = ({
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
             <Section className="mt-[32px]">
               <Img
-                src={`${baseUrl}/TS-logo.png`}
-                width="40"
+                src={`${baseUrl}/TS-logo-dark.png`}
+                width="50"
                 alt="Tech Syndicate"
                 className="my-0 mx-auto"
               />
