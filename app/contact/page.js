@@ -28,7 +28,7 @@ export default function Contact() {
           <div className="flex flex-wrap flex-col gap-10 sm:gap-0 sm:flex-row w-[90vw] sm:w-[70vw] justify-between">
             <LeftSide className="sm:w-[50%] text-left sm:pr-4">
               <SubTitle>Contact Us</SubTitle>
-              <p className="text-lg mb-2" {...useFadeUp}>
+              <p className="text-lg mb-2" {...useFadeUp()}>
                 If you have any questions about our team, resources or have any
                 other concerns, send let us know. <br /> Feel free to send us an
                 email :)
@@ -36,10 +36,11 @@ export default function Contact() {
               <a
                 className="text-lg"
                 href="mailto:techsyndicate0519@outlook.com"
+                {...useFadeUp()}
               >
                 techsyndicate0519@outlook.com
               </a>
-              <a className="text-lg" href="tel:+12102842594">
+              <a className="text-lg" href="tel:+12102842594" {...useFadeUp()}>
                 (210)-284-2594
               </a>
             </LeftSide>

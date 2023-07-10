@@ -4,6 +4,15 @@ import { useState } from 'react';
 import { sendEmail } from './actions';
 import { Button, Input, Textarea } from '@nextui-org/react';
 import { styled } from 'styled-components';
+import toast from 'react-hot-toast';
+
+const notify = () =>
+  toast('Thank you!', {
+    position: 'bottom-center',
+    style: {
+      fontFamily: 'var(--readex-pro-font)',
+    },
+  });
 
 const Container = styled.div`
   input:-webkit-autofill,
@@ -16,14 +25,12 @@ const Container = styled.div`
 `;
 
 export const Form = () => {
-  const [finished, setFinished] = useState(false);
-
   return (
     <Container>
       <form
         action={async (data) => {
           await sendEmail(data);
-          setFinished(true);
+          notify();
         }}
         className="text-left"
       >
@@ -48,7 +55,6 @@ export const Form = () => {
           Contact
         </Button>
       </form>
-      <p>{finished ? 'Thank You!' : '​'}</p>
     </Container>
   );
 };
