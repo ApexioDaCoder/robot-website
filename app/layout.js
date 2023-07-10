@@ -46,27 +46,9 @@ export const metadata = {
   title: 'Tech Syndicate #21233',
   description:
     'We are a community team located in San Antonio, Texas whose goal is to create an advanced program to teach students CAD, coding, mechanics, and team management. Our team is comprised of students from 5 separate schools to cultivate diversity in ideas.',
-  icons: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/favicon-16x16.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/favicon-32x32.png',
-    },
-    {
-      rel: 'apple-touch-icon',
-      type: 'image/png',
-      sizes: '180x180',
-      url: '/apple-touch-icon.png',
-    },
-    { rel: 'shortcut icon', type: 'image/png', url: '/favicon.png' },
-  ],
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }) {
