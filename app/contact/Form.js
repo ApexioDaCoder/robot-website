@@ -3,12 +3,23 @@
 import { useState } from 'react';
 import { sendEmail } from './actions';
 import { Button, Input, Textarea } from '@nextui-org/react';
+import { styled } from 'styled-components';
+
+const Container = styled.div`
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  input[data-autocompleted] {
+    background-color: transparent !important;
+  }
+`;
 
 export const Form = () => {
   const [finished, setFinished] = useState(false);
 
   return (
-    <>
+    <Container>
       <form
         action={async (data) => {
           await sendEmail(data);
@@ -38,6 +49,6 @@ export const Form = () => {
         </Button>
       </form>
       <p>{finished ? 'Thank You!' : '​'}</p>
-    </>
+    </Container>
   );
 };
