@@ -60,7 +60,7 @@ export const Hero = ({
                 src={url}
                 fill={true}
                 priority={true}
-                q={100}
+                quality={100}
                 alt="Team Photo"
               />
             ),

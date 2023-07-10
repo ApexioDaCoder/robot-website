@@ -20,6 +20,13 @@ const StyledCard = styled(Card)`
   position: relative;
   transform: none;
   box-shadow: inset 0 1px 2px #525154, 0 13px 10px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    border-color: #18a0fb;
+    transform: translateY(-10px);
+  }
 `;
 
 const MemberCard = ({ member }) => {

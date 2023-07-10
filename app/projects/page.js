@@ -4,12 +4,14 @@ import { Title } from '@/components/Title';
 
 export default function Projects() {
   return (
-    <main className="text-center min-h-[100vh]">
-      <Hero url="/robot.png">
-        <HeroContent>
-          <Title delay={0.3}>Projects</Title>
-        </HeroContent>
-      </Hero>
-    </main>
+    <>
+      <main className="text-center min-h-[100vh]">
+        <Hero url="/robot.png">
+          <HeroContent>
+            <Title delay={0.3}>Projects</Title>
+          </HeroContent>
+        </Hero>
+      </main>
+    </>
   );
 }

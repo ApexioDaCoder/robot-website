@@ -5,7 +5,7 @@ import { SubTitle } from '@/components/SubTitle';
 import { Image, Button } from '@nextui-org/react';
 import { useFadeUp } from '@/lib/useFadeUp';
 import { useRouter } from 'next/navigation';
-import NextImage from "next/image";
+import NextImage from 'next/image';
 
 const Wrapper = styled.div`
   padding: 3rem 1rem;

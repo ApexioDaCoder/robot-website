@@ -69,7 +69,7 @@ export const Quote = () => {
           If you set your goals ridiculously high and it&apos;s a failure, you
           will fail above everyone else&apos;s success.
         </Balancer>
-        <p>-James Cameron</p>
+        <p className="text-sky-300">-James Cameron</p>
       </div>
     </Wrapper>
   );
