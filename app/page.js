@@ -44,7 +44,7 @@ export default function Home() {
       <SeasonList />
       <About />
       <VideoHero>
-        <VideoHeroContent className="text-right sm:w-[60vw]">
+        <VideoHeroContent className="text-center sm:text-right sm:w-[60vw]">
           <SubTitle>22-23 Robot</SubTitle>
           <p className="mb-4">Our robot for the 2022-2023 Power Play season.</p>
           <Button

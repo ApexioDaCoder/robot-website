@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <>
       <main className="text-center">
-        <Hero url="/robot.png">
+        <Hero url="/robot.png" height={50}>
           <HeroContent>
             <Title delay={0.3}>22-23 Power Play</Title>
           </HeroContent>
