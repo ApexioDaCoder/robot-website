@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import { Hero, HeroContent } from '@/components/Hero';
 import { SubTitle } from '@/components/SubTitle';
@@ -11,7 +13,7 @@ export default function Sponsors() {
           <div className="flex flex-wrap flex-col gap-10 sm:gap-0 sm:flex-row w-[90vw] sm:w-[70vw] justify-between">
             <div className="sm:w-[50%] text-left">
               <SubTitle>Sponsors</SubTitle>
-              <p className="text-lg sm:pr-4" {...useFadeUp}>
+              <p className="text-lg sm:pr-4" {...useFadeUp()}>
                 Tech Syndicate is a new team whose goal is to expand its
                 horizons and make an advanced robotics program which is
                 accessible to all people. We have had great assistance making
@@ -24,21 +26,21 @@ export default function Sponsors() {
                 fill
                 className="!h-[auto] !w-[100%] !relative inline"
                 alt="SA Current"
-                {...useFadeUp}
+                {...useFadeUp()}
               />
               <Image
                 src="/solidworks.png"
                 fill
                 className="!h-[auto] !w-[100%] !relative inline"
                 alt="Solidworks"
-                {...useFadeUp}
+                {...useFadeUp()}
               />
               <Image
                 src="/fabworks-logo.svg"
                 fill
                 className="!h-[auto] !w-[100%] !relative inline"
                 alt="Fabworks"
-                {...useFadeUp}
+                {...useFadeUp()}
               />
             </div>
           </div>

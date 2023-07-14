@@ -28,7 +28,7 @@ export const SubmissionEmail = ({
   const previewText = `Contact form submission by ${name}`;
 
   return (
-    <Html>
+    <Html style={{ background: 'white' }}>
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>
@@ -71,7 +71,7 @@ export const SubmissionConfirmationEmail = ({
   const previewText = `Contact Form Confirmation`;
 
   return (
-    <Html>
+    <Html style={{ background: 'white' }}>
       <Head />
       <Preview>{previewText}</Preview>
       <Tailwind>

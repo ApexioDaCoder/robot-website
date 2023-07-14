@@ -6,25 +6,6 @@ import Image from 'next/image';
 import MuxPlayer from '@mux/mux-player-react';
 import { useEffect, useRef } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
-
-const PlayIcon = styled(FontAwesomeIcon)`
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  transform: translate(-50%, -50%);
-  font-size: 5px;
-  padding: 10px;
-  display: block;
-  background-image: linear-gradient(#343335, #1a191b);
-  box-shadow: 0 30px 25px rgba(0, 0, 0, 0.5), inset 0 2px 2px #525154;
-  border-radius: 20px;
-  width: 15px;
-  height: 15px;
-  cursor: pointer;
-`;
-
 const Wrapper = styled(ParallaxBanner)`
   width: 100vw;
   height: ${(props) => props.height}vh;
@@ -59,7 +40,7 @@ const Container = styled.div`
   position: relative;
 `;
 
-export const HeroContent = styled.div`
+export const VideoHeroContent = styled.div`
   z-index: 21;
   position: absolute;
   top: 50%;
@@ -75,21 +56,12 @@ export const Video = () => {
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            setTimeout(
-              () =>
-                video
-                  .play()
-                  .then(function () {
-                    // autoplay was successful!
-                    console.log('autoplay success');
-                  })
-                  .catch(function (error) {
-                    // do something if you want to handle or track this error
-                    console.log('autoplay failed');
-                    console.log(error);
-                  }),
-              200
-            );
+            observer.unobserve(video);
+            const attempt = () =>
+              video.play().catch(function (error) {
+                setTimeout(attempt, 1000);
+              });
+            setTimeout(attempt, 200);
           }
         }
       },
@@ -101,7 +73,7 @@ export const Video = () => {
   return (
     <MuxPlayer
       streamType="on-demand"
-      playbackId="7AbD8C7zBvXVrT01NNikMdxhwSLzN00Xt6rXCrAotsMHE"
+      playbackId="PYDTWKqmn02G100vaQHRdmwlBFvweH3gmVzyGQC02pzX8s"
       loop
       muted
       autoplay
@@ -112,7 +84,7 @@ export const Video = () => {
 
 export const VideoHero = ({
   children,
-  height = 75,
+  height = 60,
   darkness = 0.3,
   ...etc
 }) => {
@@ -129,10 +101,7 @@ export const VideoHero = ({
         className="bleed"
         {...etc}
       >
-        <Container darkness={darkness}>
-          <HeroContent>Hello</HeroContent>
-          <PlayIcon icon={faPlay} />
-        </Container>
+        <Container darkness={darkness}>{children}</Container>
       </Wrapper>
     </ParallaxProvider>
   );

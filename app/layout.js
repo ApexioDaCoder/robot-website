@@ -13,6 +13,9 @@ import { Footer } from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { FTCInfo } from '@/components/FTC-Info';
 import { Toaster } from 'react-hot-toast';
+import { Hero, HeroContent } from '@/components/Hero';
+import { SubTitle } from '@/components/SubTitle';
+import Image from 'next/image';
 
 const paladins = localFont({
   src: './Paladins.woff2',
@@ -62,6 +65,39 @@ export default function RootLayout({ children }) {
           <Toaster />
           <Header />
           {children}
+          <Hero url="/sponsors-bg.jpeg" height={50} className="text-center">
+            <HeroContent>
+              <div>
+                <SubTitle>Sponsors</SubTitle>
+              </div>
+              <div className="grid gap-4 grid-rows-3 sm:grid-rows-none sm:grid-cols-3">
+                <div>
+                  <Image
+                    src="/SA_Current.png"
+                    fill
+                    className="!h-[auto] !w-[100%] !relative inline"
+                    alt="SA Current"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/solidworks.png"
+                    fill
+                    className="!h-[auto] !w-[100%] !relative inline"
+                    alt="Solidworks"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/fabworks-logo.svg"
+                    fill
+                    className="!h-[auto] !w-[100%] !relative inline"
+                    alt="Fabworks"
+                  />
+                </div>
+              </div>
+            </HeroContent>
+          </Hero>
           <FTCInfo />
           <Footer />
           <Analytics />

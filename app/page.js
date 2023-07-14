@@ -11,7 +11,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { TeamNumber } from './TeamNumber';
 import { SubTitle } from '@/components/SubTitle';
-import { VideoHero } from './VideoHero';
+import { VideoHero, VideoHeroContent } from './VideoHero';
+import { Button } from '@nextui-org/react';
+import Link from 'next/link';
 
 const ScrollArrow = styled(FontAwesomeIcon)`
   position: absolute;
@@ -41,39 +43,20 @@ export default function Home() {
       <Quote />
       <SeasonList />
       <About />
-      <Hero url="/sponsors-bg.jpeg" height={50}>
-        <HeroContent>
-          <div>
-            <SubTitle>Sponsors</SubTitle>
-          </div>
-          <div className="grid gap-4 grid-rows-3 sm:grid-rows-none sm:grid-cols-3">
-            <div>
-              <Image
-                src="/SA_Current.png"
-                fill
-                className="!h-[auto] !w-[100%] !relative inline"
-                alt="SA Current"
-              />
-            </div>
-            <div>
-              <Image
-                src="/solidworks.png"
-                fill
-                className="!h-[auto] !w-[100%] !relative inline"
-                alt="Solidworks"
-              />
-            </div>
-            <div>
-              <Image
-                src="/fabworks-logo.svg"
-                fill
-                className="!h-[auto] !w-[100%] !relative inline"
-                alt="Fabworks"
-              />
-            </div>
-          </div>
-        </HeroContent>
-      </Hero>
+      <VideoHero>
+        <VideoHeroContent className="text-right sm:w-[60vw]">
+          <SubTitle>22-23 Robot</SubTitle>
+          <p className="mb-4">Our robot for the 2022-2023 Power Play season.</p>
+          <Button
+            variant="bordered"
+            color="white"
+            as={Link}
+            href="/season/power-play"
+          >
+            Learn More
+          </Button>
+        </VideoHeroContent>
+      </VideoHero>
     </main>
   );
 }

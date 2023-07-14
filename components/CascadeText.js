@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components';
 const slideIn = keyframes`
   from {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    transform: translateY(1.2em) rotate(0.01turn);
+    transform: translateY(1.2em);
   }
 `;
 
@@ -42,7 +42,9 @@ const CascadeWrapper = styled.div`
 
 export const CascadeText = ({ children, delay = 0, ...etc }) => {
   const [onScreen, setOnScreen] = useState(false);
+  const [counter, setCounter] = useState(0);
   const ref = useRef();
+
   useEffect(() => {
     const component = ref.current;
     const observer = new IntersectionObserver(
@@ -56,9 +58,13 @@ export const CascadeText = ({ children, delay = 0, ...etc }) => {
       },
       { threshold: 1 }
     );
-    observer.observe(component);
+    if (component) {
+      observer.observe(component);
+    } else {
+      setCounter(counter + 1);
+    }
     return () => observer.unobserve(component);
-  }, []);
+  }, [counter]);
 
   if (typeof children == 'string') {
     return (
